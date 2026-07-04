@@ -48,7 +48,13 @@ document.getElementById("searchBtn").onclick = async (e) => {
       const notes = await response.json();
       const foundNotesDiv = document.getElementById("foundNotes");
       foundNotesDiv.innerHTML = notes
-        .map((note) => `<div>${note.content}</div>`)
+        .map(
+          (note) => `
+        <div class="foundNotes">
+          <div><strong>Note ID:</strong> ${note.id}</div>
+          <div>${note.content}</div>
+        </div>`,
+        )
         .join("");
     } else {
       alert("Failed to search notes response not ok");

@@ -25,10 +25,10 @@ export const formatNotes = (notes) => {
     .map((note) => {
       return `
         <div class="note">
+          <div><strong>Note ID:</strong> ${note.id}</div>
           <p>${note.content}</p>
           <div class="tags">
-            ${note.tags.map((tag) => `<span class="tag">Tag:${tag}</span>`).join(` `)}
-            <p>ID: ${note.id}</p>
+            ${note.tags.map((tag) => `<span class="tag">Tag:${tag}</span>`).join(` `)} 
           </div>
         </div>`;
     })
